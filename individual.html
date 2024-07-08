@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual - Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            position: relative;
+            color: white;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .overlay h1 {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-purple-600 text-white p-4 text-center">
+        <h1 id="business-name" class="text-3xl font-bold">Your Name</h1>
+    </header>
+    <div class="hero">
+        <div class="overlay">
+            <h1 id="business-name-main">Your Name</h1>
+            <p class="mt-4 text-lg">Showcase your personal portfolio</p>
+            <a href="#portfolio" class="mt-4 px-6 py-3 bg-purple-600 text-white rounded-full">Explore My Work</a>
+        </div>
+    </div>
+    <main class="container mx-auto my-8">
+        <section id="portfolio" class="text-center">
+            <h2 class="text-3xl font-semibold mb-6">Welcome to <span id="business-name-main-section">Your Name</span>'s Portfolio</h2>
+            <!-- <p class="mb-6 text-lg text-gray-700">This is a demo website for showcasing individual portfolios.</p> -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Photo's</h3>
+                        <p class="text-gray-700">Browse through my  projects.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1576266394503-4999348b5447?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Design" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Gralley</h3>
+                        <p class="text-gray-700">Explore my Gralley</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Photography" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Photography</h3>
+                        <p class="text-gray-700">Check out my photography portfolio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-purple-600 text-white p-4 text-center">
+        <p>&copy; 2024 <span id="business-name-footer">Your Name</span>. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const businessName = params.get('name') || 'Your Name';
+            document.querySelectorAll('#business-name, #business-name-main, #business-name-main-section, #business-name-footer').forEach(el => {
+                el.textContent = businessName;
+            });
+        });
+    </script>
+</body>
+</html>

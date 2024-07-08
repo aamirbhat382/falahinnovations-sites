@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            position: relative;
+            color: white;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .overlay h1 {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white p-4 text-center">
+        <h1 id="business-name" class="text-3xl font-bold">Shop Name</h1>
+    </header>
+    <div class="hero">
+        <div class="overlay">
+            <h1 id="business-name-main">Shop Name</h1>
+            <p class="mt-4 text-lg">Your one-stop shop for quality products</p>
+            <a href="#products" class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-full">Explore Our Products</a>
+        </div>
+    </div>
+    <main class="container mx-auto my-8">
+        <section id="products" class="text-center">
+            <h2 class="text-3xl font-semibold mb-6">Welcome to <span id="business-name-main-section">Shop Name</span></h2>
+            <!-- <p class="mb-6 text-lg text-gray-700">This is a demo website for showcasing our products to shops.</p> -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1530745342582-0795f23ec976?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Quality Products</h3>
+                        <p class="text-gray-700">Browse through our range of high-quality products.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Electronics" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Electronics</h3>
+                        <p class="text-gray-700">Find the latest and greatest in electronics at our shop.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Clothing" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Fashion & Clothing</h3>
+                        <p class="text-gray-700">Discover the newest trends in fashion and clothing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-blue-600 text-white p-4 text-center">
+        <p>&copy; 2024 <span id="business-name-footer">Shop Name</span>. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const businessName = params.get('name') || 'Shop Name';
+            document.querySelectorAll('#business-name, #business-name-main, #business-name-main-section, #business-name-footer').forEach(el => {
+                el.textContent = businessName;
+            });
+        });
+    </script>
+</body>
+</html>
